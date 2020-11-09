@@ -2,9 +2,16 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    result = dict()
 
-    return result
+    for a in arrays:
+        for i in a:
+            if i in result:
+                result[i] += 1
+            else:
+                result[i] = 1
+
+    return [info[0] for info in result.items() if info[1] == len(arrays)]
 
 
 if __name__ == "__main__":

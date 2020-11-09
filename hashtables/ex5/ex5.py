@@ -6,8 +6,20 @@ def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    result = []
 
+    f_dict = dict()
+
+    for i in files:
+        a = i.split('/')
+        find = a[-1]
+        if find not in f_dict:
+            f_dict[find] = []
+        f_dict[find].append(i)
+
+    for q in queries:
+        if q in f_dict:
+            result.append(f_dict[q])
     return result
 
 

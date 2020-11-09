@@ -7,8 +7,15 @@ class Ticket:
 
 def reconstruct_trip(tickets, length):
     """
-    YOUR CODE HERE
+    Return a list of strings representing the sequence of flights
     """
-    # Your code here
+    route = [None] * length
 
+    r = dict()
+    for t in tickets:
+        r[t.source] = t.destination
+    destine = r['NONE']
+    for current in range(0, length):
+        route[current] = destine
+        destine = r[destine]
     return route
