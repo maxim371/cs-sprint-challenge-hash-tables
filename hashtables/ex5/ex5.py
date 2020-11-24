@@ -19,7 +19,7 @@ def finder(files, queries):
 
     for q in queries:
         if q in f_dict:
-            result.append(f_dict[q])
+            result.extend(f_dict[q])
     return result
 
 
